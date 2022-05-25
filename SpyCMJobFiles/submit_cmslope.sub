@@ -1,0 +1,13 @@
+universe = vanilla
+executable = runscript_cmslope.sh
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Notification = Error
+
+Arguments = $(RUN) $(START) $(STOP)
+
+Output = /home/bjornb/CMSSW_GitHub/SpyChannel/CMSSW_12_1_0_pre3/src/DQM/SiStripMonitorHardware/test/condor/log_$(START)-$(STOP)_$(Cluster).$(Process).out
+Error  = /home/bjornb/CMSSW_GitHub/SpyChannel/CMSSW_12_1_0_pre3/src/DQM/SiStripMonitorHardware/test/condor/log_$(START)-$(STOP)_$(Cluster).$(Process).err
+Log    = /home/bjornb/CMSSW_GitHub/SpyChannel/CMSSW_12_1_0_pre3/src/DQM/SiStripMonitorHardware/test/condor/log_$(START)-$(STOP)_$(Cluster).$(Process).log
+
+Queue RUN, START, STOP from cmdList.txt
